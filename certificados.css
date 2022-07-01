@@ -1,0 +1,36 @@
+* {
+    box-sizing: border-box;
+}
+
+header {
+    text-align: center;
+    position: sticky;
+    color:black;
+    background-color: beige;
+    font-size: 30px;
+    word-spacing: 3em;
+    z-index: 1;
+    height: 100px;
+    top: 10px;
+}
+
+header ul li {
+    display: inline;
+    position: relative;
+    top: 25px;
+    word-spacing: normal;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+a {
+    text-decoration: none;
+    color:rgb(51, 66, 66);
+}
+
+a:hover {
+    color:red
+}
+
+body {
+    background-color: rgb(51, 66, 66);
+}
