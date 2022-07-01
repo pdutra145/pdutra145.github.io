@@ -24,6 +24,10 @@ header ul li {
     font-style: normal;
 }
 
+header a {
+    color:rgb(51, 66, 66);
+}
+
 a {
     text-decoration: none;
     color: gold;
