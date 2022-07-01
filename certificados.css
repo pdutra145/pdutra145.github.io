@@ -31,6 +31,43 @@ a:hover {
     color:red
 }
 
+h1 {
+    color:white;
+    font-size: 75px;
+    position: relative;
+    display: block;
+    height:75%;
+    text-align: center;
+}
+
 body {
     background-color: rgb(51, 66, 66);
+    text-align: center;
+    line-height: normal;
+    word-spacing: normal;
+    color:beige;
+    font-size: 25px;
+}
+
+#codewars img{
+    width:50%;
+    height:50%
+}
+
+#ProgrammingExpert img{
+    height: 40%;
+    width:40%;
+}
+
+footer img{
+    display:inline;
+    position: relative;
+    top:5px;
+    width: 5%;
+    height: 5%;
+}
+
+footer {
+    background-color: beige;
+    margin: 10px;
 }
