@@ -22,9 +22,13 @@ header ul li {
     font-family: 'Courier New', Courier, monospace;
 }
 
+header a {
+    color:rgb(51, 66, 66);
+}
+
 a {
     text-decoration: none;
-    color:rgb(51, 66, 66);
+    color: gold;
 }
 
 a:hover {
