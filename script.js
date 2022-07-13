@@ -42,7 +42,7 @@ const content = getInfo().then((response) =>{
 }
 };
 
-
+import Swup from "swup"
 const swup = new Swup();
 
 init()
