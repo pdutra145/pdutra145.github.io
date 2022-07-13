@@ -61,6 +61,13 @@ a:hover {
     color:red;
 }
 
+#intro p {
+    width: 80%;
+    transform: translateX(+10%);
+    text-align: justify;
+}
+
+
 body {
     background-color: rgb(6, 55, 65);
     color: beige;
