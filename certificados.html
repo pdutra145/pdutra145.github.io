@@ -1,36 +1,45 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Certificados</title>
-        <link rel="stylesheet" href="./certificados.css">
+        <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="X-UA-Compatible" content="IE=7">
+
+        <link rel="stylesheet" href="sobreMim.css">
         <link rel="icon" href="https://www.seekpng.com/png/detail/53-538038_cool-logo-png-download-cool-icon-png.png">
+        <link rel="preload" as="script" href="/codewarsDisplay.js">
+
+        <script defer src="node_modules/swup/dist/swup.min.js"></script>  
+        <script defer src="/script.js"></script>
+
+        <title>Certificados</title>
     </head>
     <header>
         <ul>
-            <li><a href="./index.html">Sobre Mim</a></li>
-            <li><a href="./fotos.html">Fotos</a></li>
-            <li>Certificados</li>
+            <li><a href="/index.html">Sobre Mim</a></li>
+            <li><a href="/fotos.html">Fotos</a></li>
+            <li><a href="/certificados.html">Certificados</a></li>
         </ul>
     </header>
-    <main>
+    <main id="swup" class="transition-fade">
         <body>
             <section id="codewars">
                 <h1>Codewars</h1>
-                <script id="code" src="./codewarsInfo.js"></script>
             </section>
             <section id="ProgrammingExpert">
                 <h1>Programming Expert</h1>
-                <img src="./certificados/ProgrammingExpert_Certificate.png" alt="">
+                <img src="/certificados/ProgrammingExpert_Certificate.png" alt="">
             </section>
             <section id="codeacademy">
                 <h1>Codeacademy</h1>
-                <p>A API do codeacademy não é pública, portanto você pode ver as minhas liçenças e certificados
+                <p>A API do codeacademy não é pública, portanto você pode ver as minhas licenças e certificados
                     pelo <a href="https://www.linkedin.com/in/pdutra145/details/certifications/" target="_blank">Linkedin</a> ou pelo meu <a href="https://www.codecademy.com/profiles/pdutra" target="_blank">perfil do codeacademy</a>.
                 </p>
             </section>
         </body>
     </main>
-    <footer id="redesSociais">
+    <footer id="redesSociais" class="imgs">
         <a title="Twitter profile" href="https://twitter.com/p___dut" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/124/124021.png"></a>
         <a title="GitHub profile" href="https://github.com/pdutra145" target="_blank"><img src="https://avatars.githubusercontent.com/u/9919?s=280&v=4"></a>
         <a title="codecademy profile" href="https://www.codecademy.com/profiles/pdutra" target="_blank"><img src="https://play-lh.googleusercontent.com/PG76Emc2UrtKFRE4V7g1cGQ9b4rozQiWjhwCwlVeg37k3w1iZ-jZs_Zg3QlrJp2pQsk"></a>

@@ -1,18 +1,28 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
-        <title>Sobre Mim</title>
-        <link rel="stylesheet" href="./sobreMim.css">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="X-UA-Compatible" content="IE=7">
+
+        <link rel="stylesheet" href="sobreMim.css">
         <link rel="icon" href="https://www.seekpng.com/png/detail/53-538038_cool-logo-png-download-cool-icon-png.png">
+        
+        <script defer src="node_modules/swup/dist/swup.min.js"></script>  
+        <script defer src="/script.js"></script>
+        
+        <title>Sobre Mim</title>
     </head>
     <header>
-        <ul>
-            <li>Sobre Mim</li>
-            <li><a href="./fotos.html">Fotos</a></li>
-            <li><a href="./certificados.html">Certificados</a></li>
-        </ul>
+        <nav>
+            <ul>
+                <li><a href="/index.html">Sobre Mim</a></li>
+                <li><a href="/fotos.html">Fotos</a></li>
+                <li><a href="/certificados.html">Certificados</a></li>
+            </ul>
+        </nav>
     </header>
-    <main>
+    <main  id="swup" class="transition-fade">
         <body>
             <section id="intro">
                 <h1>Breve Descrição</h1>
@@ -20,13 +30,13 @@
                    Sou estudante de Ciências Econômicas no IBMEC SP e me formei em uma escola chamada OLM no Rio de Janeiro. 
                    Adoro fazer exercício físico, estudar, e passar tempo com minha família.</p>
             </section>
-            <section id="prog">
+            <section>
                 <h1>Programação</h1>
                 <ul>
                     <li>Começei a estudar programação e ciências computacionais com 15 anos de idade.</li>
                     <li>Atualmente tenho mais conhecimento e experiência com a linguagem Python.</li>
                     <li>Projetos com bibliotecas: pygame, pyqt5, pandas, math, time, etc.</li>
-                    <li>Montei jogos 2D simplês como Snake, Space Invaders, Connect Four, Flappy Bird, etc. (acesse meu <a href="#redesSociais">GitHub</a> para saber mais)</li>
+                    <li>Montei jogos 2D simplês como Snake, Space Invaders, Connect Four, Flappy Bird, etc. (acesse meu <a href="/#redesSociais">GitHub</a> para saber mais)</li>
                     <li>Atualmente estudando Golang, HTML, CSS, JavaScript, e bibliotecas e frameworks dessas linguagens.</li>
                     <li>Breve conhecimento de JavaScript.</li>
                     <li>Montei esse Site com HTML, CSS e JavaScript.</li>
@@ -36,7 +46,7 @@
             <section id="econo">
                 <h1>Economia</h1>
                 <ul>
-                    <li>Começei a me interessar por economia e finanças com 16 anos de idade.</li>
+                    <li>Comecei a me interessar por economia e finanças com 16 anos de idade.</li>
                     <li>Estudei livros de notáveis escritores como Milton Friedman, Friedrick Hayek, Ludwig Von Mises,
                         Ray Dalio, Thiago Nigro, Yuval Noah Harrari, etc.</li>
                     <li>Estudante de Economia no IBMEC SP.</li>
@@ -45,7 +55,7 @@
             </section>
         </body>
     </main>
-    <footer id="redesSociais">
+    <footer id="redesSociais" class="imgs">
         <a title="Twitter profile" href="https://twitter.com/p___dut" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/124/124021.png"></a>
         <a title="GitHub profile" href="https://github.com/pdutra145" target="_blank"><img src="https://avatars.githubusercontent.com/u/9919?s=280&v=4"></a>
         <a title="codecademy profile" href="https://www.codecademy.com/profiles/pdutra" target="_blank"><img src="https://play-lh.googleusercontent.com/PG76Emc2UrtKFRE4V7g1cGQ9b4rozQiWjhwCwlVeg37k3w1iZ-jZs_Zg3QlrJp2pQsk"></a>
