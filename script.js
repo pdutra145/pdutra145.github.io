@@ -3,7 +3,7 @@
 function init() {
     // run whatever we need
    
-
+if (document.querySelector("#codewars")) {
 async function getInfo() {
     let url = "https://www.codewars.com/api/v1/users/Dutz145";
 
@@ -39,6 +39,7 @@ const content = getInfo().then((response) =>{
     div.append(img)
 
 })
+}
 };
 
 
