@@ -1,0 +1,96 @@
+* {
+  text-align: center;
+  color: ivory;
+}
+
+a {
+  color: rgb(255, 0, 0);
+  text-decoration: none;
+}
+
+a:hover {
+  color: rgb(255, 0, 0);
+  text-decoration: underline;
+}
+
+body {
+  background-color: #2c2d2e;
+}
+
+h1 {
+  margin: 2rem 0px;
+  font-weight: 700;
+}
+
+p {
+  text-align: justify;
+}
+
+#nav a {
+  color: white;
+}
+
+#nav a.active {
+  color: red;
+}
+
+#nav ul {
+  font-size: 1.5rem;
+}
+
+.container-fluid {
+  font-size: 1rem;
+}
+
+.container-md {
+  font-size: 1.5rem;
+}
+
+.container-md ul li,
+.container-fluid ul li {
+  padding-top: 10px;
+}
+
+/* Cards */
+/* 
+.card {
+  border: 1px solid #343536;
+  background-color: #343536;
+}
+
+.card-body {
+  background-color: #343536;
+}
+
+.card-text {
+  text-align: justify center;
+}
+
+.card-title {
+  margin-bottom: 20px;
+}
+
+.card-text,
+.card-title {
+  font-size: larger;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+  margin: 50px 0px;
+} */
+
+/* Slider */
+
+.carousel-control-prev-icon {
+  background-color: black;
+}
+
+.carousel-control-next-icon {
+  background-color: black;
+}
+
+.carousel-dark .carousel-indicators [data-bs-target] {
+  background-color: white;
+}
