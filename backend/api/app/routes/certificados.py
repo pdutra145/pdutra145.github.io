@@ -61,7 +61,14 @@ def certificate_details(certificate_id):
     certificate_details = Certificados.query.filter_by(id=certificate_id).first()
 
     if certificate_details:
-        date = certificate_details.post_date.astimezone(tz.tzlocal()).strftime('%d-%m-%Y %H:%M:%S')
+        # Define the UTC and São Paulo time zones
+        utc_zone = tz.tzutc()
+
+        # Ensure the post_date is timezone-aware, assuming it's in UTC
+        utc_date = certificate_details.post_date.replace(tzinfo=utc_zone)
+
+        # Convert post_date to São Paulo time
+        date = utc_date.astimezone(tz.tzlocal()).strftime('%d-%m-%Y %H:%M:%S')
 
         return dict(
             status="success",

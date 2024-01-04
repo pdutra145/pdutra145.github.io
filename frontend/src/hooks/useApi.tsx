@@ -40,21 +40,24 @@ function useApi() {
     [apiHost, apiToken]
   );
 
-  const fetchImage = async (
-    imageUrl: string,
-    setImageSrc: Dispatch<SetStateAction<string | undefined>>
-  ) => {
-    try {
-      const response = await axios.get(imageUrl, {
-        responseType: "blob",
-      });
-      const imageBlob = response.data;
-      const imageObjectURL = URL.createObjectURL(imageBlob);
-      setImageSrc(imageObjectURL);
-    } catch (error) {
-      console.error("Error fetching the image", error);
-    }
-  };
+  const fetchImage = useCallback(
+    async (
+      imageUrl: string,
+      setImageSrc: Dispatch<SetStateAction<string | undefined>>
+    ) => {
+      try {
+        const response = await axios.get(`${apiHost}/${imageUrl}`, {
+          responseType: "blob",
+        });
+        const imageBlob = response.data;
+        const imageObjectURL = URL.createObjectURL(imageBlob);
+        setImageSrc(imageObjectURL);
+      } catch (error) {
+        console.error("Error fetching the image", error);
+      }
+    },
+    []
+  );
 
   const fetchSobreMim = useCallback(
     async (

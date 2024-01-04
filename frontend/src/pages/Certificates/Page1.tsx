@@ -25,24 +25,7 @@ function Page1() {
 
   return (
     <>
-      <Card
-        title="Programming Expert Certificate"
-        alt="Certificado de Programação"
-        src="/certificates/ProgrammingExpert_Certificate.png"
-      >
-        <p className="card-text">
-          Certificado de conclusão do curso de programação oferecido pela{" "}
-          <strong>AlgoExpert.io</strong>. Saiba mais acessando o{" "}
-          <a
-            href="https://www.programmingexpert.io/product"
-            target="_blank"
-            title="ProgrammingExpert.io"
-          >
-            site
-          </a>
-          .
-        </p>
-      </Card>
+      <Card certificate_id={2}/>
       <Row className="justify-content-center">
         <Col md={8}>
           <Slider
