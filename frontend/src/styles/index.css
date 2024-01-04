@@ -1,0 +1,69 @@
+* {
+  text-align: center;
+  color: ivory;
+}
+
+a {
+  color: rgb(255, 0, 0);
+  text-decoration: none;
+}
+
+a:hover {
+  color: rgb(255, 0, 0);
+  text-decoration: underline;
+}
+
+body {
+  background-color: #38393a;
+}
+
+h1 {
+  margin: 2rem 0px;
+  font-weight: 700;
+}
+
+p {
+  text-align: justify;
+}
+
+#nav a {
+  color: white;
+}
+
+#nav a.active {
+  color: red;
+}
+
+#nav ul {
+  font-size: 1.5rem;
+}
+
+.container-fluid {
+  font-size: 1rem;
+}
+
+.container-md {
+  font-size: 1.5rem;
+}
+
+.container-md ul li,
+.container-fluid ul li {
+  padding-top: 10px;
+}
+
+strong {
+  color: red;
+  font-weight: bold;
+}
+
+.carousel-control-prev-icon {
+  background-color: black;
+}
+
+.carousel-control-next-icon {
+  background-color: black;
+}
+
+.carousel-dark .carousel-indicators [data-bs-target] {
+  background-color: white;
+}
