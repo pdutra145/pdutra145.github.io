@@ -19,4 +19,6 @@ RUN pip install -r requirements.txt
 
 COPY . /app/
 
-ENTRYPOINT [ "flask", "--app", "api/app", "run" ]
+WORKDIR /app/api
+
+# CMD [ "flask", "--app", "api/app", "run" ]

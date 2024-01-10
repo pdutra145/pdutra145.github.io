@@ -7,7 +7,7 @@ services:
     image: personal_website_backend
     env_file:
       - ./backend/.env
-    # command: waitress-serve --call 'flaskr:/api/app/create_app'
+    command: waitress-serve --listen '0.0.0.0:5000' --call 'app:create_app'
     volumes:
       - ./backend:/app
     ports:
@@ -16,9 +16,9 @@ services:
     build:
       context: ./frontend
       dockerfile: Dockerfile
-    image: personal_website_frontend
-    # command: start
-    command: start:prod
+    # image: personal_website_frontend
+    command: start
+    # command: start:prod
     env_file:
       - ./frontend/.env
     volumes:
