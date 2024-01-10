@@ -1,8 +1,9 @@
 import React from "react";
 import { Row } from "react-bootstrap";
 import styled from "styled-components";
+import { Grid } from "@mui/material";
 
-const StyledRow = styled(Row)`
+const StyledRow = styled(Grid)`
   // border: 1px solid #343536;
   // background-color: #343536;
   margin: 1rem 0;

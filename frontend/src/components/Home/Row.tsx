@@ -1,6 +1,5 @@
 import React from "react";
-import { Row } from "react-bootstrap";
-import styled from "styled-components";
+import { Grid } from "@mui/material";
 
 interface HomeRowProps {
   id: string;
@@ -8,17 +7,22 @@ interface HomeRowProps {
   children: JSX.Element;
 }
 
-const HomeStyledRow = styled(Row)`
-  margin: 2rem 0;
-  font-size: 1.5rem;
-`;
-
 const HomeRow: React.FC<HomeRowProps> = (props) => {
   return (
-    <HomeStyledRow id={props.id}>
-      <h1>{props.title}</h1>
+    <Grid
+      container
+      sx={{
+        fontSize: "1.5rem",
+        // margin: "2rem 0",
+        justifyContent: "center",
+      }}
+      id={props.id}
+    >
+      <Grid xs={12}>
+        <h1>{props.title}</h1>
+      </Grid>
       {props.children}
-    </HomeStyledRow>
+    </Grid>
   );
 };
 

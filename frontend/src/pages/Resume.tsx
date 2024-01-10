@@ -1,19 +1,26 @@
-import { Container, Row, Col } from "react-bootstrap";
-import PageTransitionStyle from "./layout/PageTransitionStyle";
+import { CircularProgress, Grid } from "@mui/material";
+import { useContext } from "react";
+import { LoadingContext } from "../context/Loading";
 
 function ResumePage() {
+  const { isLoading } = useContext(LoadingContext);
+
   return (
-    <PageTransitionStyle>
-      <Container className="my-5">
-        <Row className="row justify-content-center vh-100">
-          <embed
-            className="col-10"
-            type="application/pdf"
-            src="pdf/resumo.pdf"
-          ></embed>
-        </Row>
-      </Container>
-    </PageTransitionStyle>
+    <Grid container justifyContent={"center"}>
+      {isLoading ? (
+        <Grid justifyContent={"center"}>
+          <CircularProgress />
+        </Grid>
+      ) : (
+        <Grid
+          component={"embed"}
+          lg={8}
+          height={"75vh"}
+          type="application/pdf"
+          src="pdf\Meu Resumo.pdf"
+        ></Grid>
+      )}
+    </Grid>
   );
 }
 

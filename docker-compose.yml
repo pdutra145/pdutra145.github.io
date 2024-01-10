@@ -1,0 +1,29 @@
+version: '3'
+services:
+  api:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    image: personal_website_backend
+    env_file:
+      - ./backend/.env
+    # command: waitress-serve --call 'flaskr:/api/app/create_app'
+    volumes:
+      - ./backend:/app
+    ports:
+      - "5000:5000"
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    image: personal_website_frontend
+    # command: start
+    command: start:prod
+    env_file:
+      - ./frontend/.env
+    volumes:
+      - ./frontend:/app
+    ports:
+      - "3000:3000"
+    depends_on:
+      - api

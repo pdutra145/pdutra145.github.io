@@ -7,15 +7,16 @@ export interface SobreMim {
   date: Date;
 }
 
-export interface Certificate {
+export interface CertificateModel {
   id: number | Key;
   title: string;
   description: string;
   date: Date;
+  image:string;
 }
 
 export interface Response {
-  data: SobreMim[] | Certificate;
+  data: SobreMim[] | CertificateModel;
 }
 
 export interface Image {

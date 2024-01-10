@@ -1,10 +1,13 @@
 import os
 import locale
 
-locale.setlocale(locale.LC_ALL, 'pt-BR')
+try:
+    locale.setlocale(locale.LC_ALL, 'pt_BR.UTF-8')
+except locale.Error as e:
+    print(f"Error setting locale: {e}")
 
 class Config:
-    HOST = os.getenv('HOST')
+    HOST = os.getenv('FLASK_RUN_HOST')
     PORT = int(os.getenv('FLASK_RUN_PORT'))
     DEBUG = bool(os.getenv('FLASK_DEBUG'))
     SQLALCHEMY_DATABASE_URI = os.getenv('SQLALCHEMY_DATABASE_URI')

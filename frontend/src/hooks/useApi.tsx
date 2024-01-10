@@ -1,5 +1,5 @@
 import axios from "axios";
-import { SobreMim, Certificate, Response } from "../models/apiModels";
+import { SobreMim, CertificateModel, Response } from "../models/apiModels";
 import {
   Key,
   SetStateAction,
@@ -7,64 +7,82 @@ import {
   useEffect,
   useState,
   Dispatch,
+  useContext,
+  useMemo,
 } from "react";
+import { LoadingContext } from "../context/Loading";
 
 function useApi() {
   const apiHost = process.env.REACT_APP_API_HOST;
   const apiToken = process.env.REACT_APP_API_TOKEN;
-  const [loading, setLoading] = useState(true);
+
+  const { setIsLoading, isLoading } = useContext(LoadingContext);
   const [error, setError] = useState<Error | null>(null);
 
   const fetchCertificate = useCallback(
     async (
-      endpoint: String,
-      setStateComponent: Dispatch<SetStateAction<Certificate | undefined>>
+      certificate_ids: number[],
+      setStateComponent: Dispatch<
+        SetStateAction<CertificateModel[] | undefined>
+      >
     ) => {
-      setLoading(true);
+      setIsLoading(true);
       setError(null);
 
       try {
-        const res = await axios.get<Response>(`${apiHost}/${endpoint}`, {
-          headers: {
-            Authorization: `Bearer ${apiToken}`,
-          },
-        });
+        for (const id of certificate_ids) {
+          const resCertificateDetails = await axios.get<Response>(
+            `${apiHost}/certificates/${id}`,
+            {
+              headers: {
+                Authorization: `Bearer ${apiToken}`,
+              },
+            }
+          );
 
-        setStateComponent(res.data.data as Certificate);
+          const response = await axios.get(
+            `${apiHost}/certificates/images/${id}`,
+            {
+              responseType: "blob",
+            }
+          );
+          const imageBlob = response.data;
+          const imageObjectURL = URL.createObjectURL(imageBlob);
+
+          const certificate: CertificateModel = {
+            ...(resCertificateDetails.data.data as CertificateModel),
+            image: imageObjectURL,
+          };
+
+          setStateComponent((prevCertificates) => {
+            // Initialize prevCertificates if it's not already a Set
+            const currentCertificates = prevCertificates || [];
+          
+            // Add the new certificate only if it's not already present
+            if (!currentCertificates.some((el,idx) => el.id === certificate.id)) {
+              return [...currentCertificates, certificate];
+            }
+          
+            // If the certificate is already present, return the current set
+            return currentCertificates;
+          });
+          
+        }
       } catch (error) {
         setError(error as Error);
       } finally {
-        setLoading(false);
-      }
-    },
-    [apiHost, apiToken]
-  );
-
-  const fetchImage = useCallback(
-    async (
-      imageUrl: string,
-      setImageSrc: Dispatch<SetStateAction<string | undefined>>
-    ) => {
-      try {
-        const response = await axios.get(`${apiHost}/${imageUrl}`, {
-          responseType: "blob",
-        });
-        const imageBlob = response.data;
-        const imageObjectURL = URL.createObjectURL(imageBlob);
-        setImageSrc(imageObjectURL);
-      } catch (error) {
-        console.error("Error fetching the image", error);
+        setIsLoading(false);
       }
     },
     []
   );
 
-  const fetchSobreMim = useCallback(
+  const fetchIntroduction = useCallback(
     async (
       endpoint: String,
       setStateComponent: Dispatch<SetStateAction<SobreMim[] | undefined>>
     ) => {
-      setLoading(true);
+      setIsLoading(true);
       setError(null);
 
       try {
@@ -78,13 +96,13 @@ function useApi() {
       } catch (error) {
         setError(error as Error);
       } finally {
-        setLoading(false);
+        setIsLoading(false);
       }
     },
     [apiHost, apiToken]
   );
 
-  return { fetchCertificate, fetchImage, fetchSobreMim, loading, error };
+  return { fetchCertificate, fetchIntroduction, error };
 }
 
 export default useApi;

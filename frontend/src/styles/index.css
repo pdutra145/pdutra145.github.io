@@ -67,3 +67,7 @@ strong {
 .carousel-dark .carousel-indicators [data-bs-target] {
   background-color: white;
 }
+
+#slider-pagination {
+  color:white !important;
+}

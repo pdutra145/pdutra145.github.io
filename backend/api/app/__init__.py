@@ -20,7 +20,7 @@ def create_app():
     app.config['UPLOADS_DEFAULT_DEST'] = 'uploads'
     app.config['UPLOADS_DEFAULT_URL'] = Config.DEFAULT_FILE_UPLOAD_URL
 
-    CORS(app)
+    CORS(app, origins='*')
 
     # configure_uploads(app, (IMAGES,))
 
