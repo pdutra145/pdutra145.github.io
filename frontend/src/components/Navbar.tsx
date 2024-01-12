@@ -58,6 +58,16 @@ const NavigationBar: React.FC = () => {
                 Resumo
               </NavLink>
             </Nav.Link>
+            <Nav.Link href="#artigos">
+              <NavLink
+                to="/artigos"
+                className={({ isActive }) =>
+                  isActive ? "nav-link active" : "nav-link"
+                }
+              >
+                Artigos
+              </NavLink>
+            </Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

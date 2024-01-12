@@ -7,11 +7,14 @@ services:
     image: personal_website_backend
     env_file:
       - ./backend/.env
-    command: waitress-serve --listen '0.0.0.0:5000' --call 'app:create_app'
+    command: flask --app app run --debug
+    # command: waitress-serve --listen '0.0.0.0:5000' --call 'app:create_app'
     volumes:
       - ./backend:/app
     ports:
       - "5000:5000"
+    depends_on:
+      - db
   frontend:
     build:
       context: ./frontend
@@ -27,3 +30,17 @@ services:
       - "3000:3000"
     depends_on:
       - api
+      - db
+  db:
+    image: mysql
+    ports:
+      - "3306:3306"
+    environment:
+      - MYSQL_DATABASE=personal_website
+      - MYSQL_ROOT_PASSWORD=mypass
+    volumes:
+      - personal_website_data:/var/lib/mysql
+
+volumes:
+  personal_website_data:
+    

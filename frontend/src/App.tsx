@@ -8,6 +8,7 @@ import CertficatesPage from "./pages/Certificates/Certficates";
 import ResumePage from "./pages/Resume";
 
 import "bootstrap/dist/css/bootstrap.min.css";
+import Articles from "./pages/Articles";
 
 const router = createBrowserRouter([
   {
@@ -18,6 +19,7 @@ const router = createBrowserRouter([
       { index: true, element: <Home /> },
       { path: "/certificados", element: <CertficatesPage /> },
       { path: "/resumo", element: <ResumePage /> },
+      { path: "/artigos", element: <Articles /> },
     ],
   },
 ]);

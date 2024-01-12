@@ -22,7 +22,7 @@ def fetch_by_title(title: str, model: Type, attrs: List[str]):
 
     return dict(status='success', data=return_obj)
 
-def fetch_by_id(model: Type, id: str | int):
+def fetch_by_id(model: Type, id):
     data = model.query.filter_by(id=id).first()
 
     if not data:

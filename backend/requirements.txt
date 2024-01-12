@@ -9,3 +9,5 @@ requests
 werkzeug
 python-dateutil
 waitress
+pymysql
+cryptography
