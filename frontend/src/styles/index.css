@@ -1,9 +1,9 @@
-* {
+/* * {
   text-align: center;
   color: ivory;
-}
+} */
 
-a {
+/* a {
   color: rgb(255, 0, 0);
   text-decoration: none;
 }
@@ -11,7 +11,7 @@ a {
 a:hover {
   color: rgb(255, 0, 0);
   text-decoration: underline;
-}
+} */
 
 body {
   background-color: #38393a;
@@ -37,7 +37,7 @@ p {
 #nav ul {
   font-size: 1.5rem;
 }
-
+/* 
 .container-fluid {
   font-size: 1rem;
 }
@@ -70,4 +70,4 @@ strong {
 
 #slider-pagination {
   color:white !important;
-}
+} */

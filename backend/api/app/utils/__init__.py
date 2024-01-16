@@ -6,6 +6,11 @@ from datetime import datetime
 from dateutil import tz
 
 def convert_utc_to_local(utc_date:datetime):
-    local_date = utc_date.replace(tzinfo=tz.tzlocal())
-    print(local_date)
-    return local_date
+    utc_zone = tz.tzutc()
+
+    # Ensure the post_date is timezone-aware, assuming it's in UTC
+    utc_date = utc_date.replace(tzinfo=utc_zone)
+
+    # Convert post_date to São Paulo time
+    date = utc_date.astimezone(tz.tzlocal()).strftime('%d-%m-%Y %H:%M:%S')
+    return date

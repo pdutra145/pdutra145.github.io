@@ -1,4 +1,5 @@
 from sqlalchemy import Column, Integer, String, BLOB, DateTime,func, ForeignKey
+from marshmallow_sqlalchemy import SQLAlchemyAutoSchema
 from app import db
 
 class User(db.Model):
@@ -53,3 +54,8 @@ class Articles(db.Model):
     creationDate = Column(DateTime(), nullable=False, default=func.now())
     lastUpdated = Column(DateTime(), nullable=False, default=func.now())
     image = Column(BLOB()) 
+
+class ArticlesSerialization(SQLAlchemyAutoSchema):
+    class Meta:
+        model = Articles
+        load_instance = True

@@ -11,3 +11,4 @@ python-dateutil
 waitress
 pymysql
 cryptography
+marshmallow-sqlalchemy

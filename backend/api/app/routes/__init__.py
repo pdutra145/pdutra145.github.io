@@ -2,13 +2,15 @@ from flask import jsonify, Blueprint, request
 from .introduction import introduction
 from .certificados import certificados
 from .auth import auth
-from app import db
+from .articles import artigos
+# from app import db
 
 v1 = Blueprint('routes', __name__, url_prefix='/v1')
 
 v1.register_blueprint(introduction)
 v1.register_blueprint(certificados)
 v1.register_blueprint(auth)
+v1.register_blueprint(artigos)
 
 @v1.post('/uploads')
 def upload_files():

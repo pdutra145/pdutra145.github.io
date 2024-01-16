@@ -6,7 +6,7 @@ from flask import Blueprint, request, abort, send_file
 from werkzeug.utils import secure_filename
 from models import Certificados, File
 from ..utils.model_ops import get_model_fields
-from ..utils.sec import check_api_token
+from ..utils.security import check_api_token
 from app import db
 from config import Config
 

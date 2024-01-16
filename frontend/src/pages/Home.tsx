@@ -4,7 +4,7 @@ import { SobreMim, CertificateModel } from "../models/apiModels";
 import PageTransitionStyle from "./layout/PageTransitionStyle";
 import styled from "styled-components";
 import useApi from "../hooks/useApi";
-import { CircularProgress, Grid } from "@mui/material";
+import { CircularProgress, Grid, Typography } from "@mui/material";
 import { LoadingContext } from "../context/Loading";
 
 const HomeStyledUl = styled.ul`
@@ -33,9 +33,9 @@ const HomePage = () => {
   return (
     <PageTransitionStyle>
       <HomeRow id="brief-intro" title="Sobre Mim">
-        {/* <p>{data.text}</p> */}
+        {/* <Typography>{data.text}</Typography> */}
         <Grid xs={12} marginX={{xs:2}} md={8}>
-          <p>
+          <Typography component={'p'} textAlign={'justify'}>
             &emsp;&emsp;Meu nome é Pedro Pacheco de Mello Dutra nasci no dia 12
             de junho de 2003 na cidade de São Paulo. Sou estudante de Ciências
             Econômicas no IBMEC SP e me formei em uma escola bilíngue chamada
@@ -68,7 +68,7 @@ const HomePage = () => {
             contêineres com servidores SQL. Por fim, quero trabalhar com
             profissionais competentes que me forneçam a base para ter uma
             excelente carreira e continuar evoluindo na minha vida acadêmica.
-          </p>
+          </Typography>
         </Grid>
       </HomeRow>
 

@@ -2,7 +2,7 @@ from flask import Blueprint, request
 from sqlalchemy import inspect
 from models import Introduction
 from ..utils.model_ops import fetch_by_id, fetch_by_title, get_model_fields
-from ..utils.sec import check_api_token
+from ..utils.security import check_api_token
 from app import db
 
 introduction = Blueprint('intro', __name__, url_prefix='/introduction')

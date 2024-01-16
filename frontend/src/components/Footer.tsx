@@ -5,25 +5,30 @@ import { Grid, Stack, Divider } from "@mui/material";
 import Box from "@mui/material";
 
 const StyledFooter = styled(Stack)`
-  & i.bi {
-    font-size: 2rem;
-  }
+background-color: #38393a;
+color:white;
 
-  & i {
-    margin: 2rem 1rem;
-  }
+& i.bi {
+  font-size: 2rem;
+}
+
+& i {
+  margin: 2rem 1rem;
+  color:ivory;
+}
 `;
+
 
 const Footer = () => {
   return (
     <StyledFooter
       spacing={2}
       maxHeight={10}
-      id="footer"
-      // justifyContent={"space-between"}
+      // id="footer"
+      justifyContent={"space-between"}
     >
       <Divider orientation="horizontal" variant="fullWidth" color="white"/>
-      <Grid container xs={10} justifyContent={"space-between"}>
+      <Grid container justifyContent={"space-between"}>
         <Grid container xs={6} justifyContent={"center"}>
           <Grid xs={2} maxHeight={5}>
             <a
