@@ -14,6 +14,7 @@ function ResumePage() {
       ) : (
         <Grid
           component={"embed"}
+          xs={10}
           lg={8}
           height={"75vh"}
           type="application/pdf"

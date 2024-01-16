@@ -2,11 +2,12 @@ import Certificate from "../../components/Certificate";
 import { sliderImgs } from "../../models/slider-model";
 import Slider from "../../components/Slider";
 import { useContext, useEffect, useState } from "react";
-import { CircularProgress, Grid } from "@mui/material";
+import { Grid } from "@mui/material";
 import Stack from "@mui/material/Stack";
 import { LoadingContext } from "../../context/Loading";
 import { CertificateModel } from "../../models/apiModels";
 import useApi from "../../hooks/useApi";
+import Loader from "../../components/Loader";
 
 
 function CertificatePage() {
@@ -42,7 +43,7 @@ function CertificatePage() {
     fetchCertificate([1, 2], setCertificateData);
   }, []);
 
-  if (isLoading) return <CircularProgress />;
+  if (isLoading) return <Loader />;
 
   return (
     <Stack rowGap={5}>

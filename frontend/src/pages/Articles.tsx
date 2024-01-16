@@ -1,5 +1,5 @@
 import React from "react";
-import ArticleSearch from "../components/ArticleSearch";
+import ArticleSearch from "../components/Artigos/ArticleSearch";
 import { Stack, Grid } from "@mui/material";
 
 const Articles = () => {

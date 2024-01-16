@@ -29,7 +29,7 @@ background-color: #38393a;
 
 const RootLayout: React.FC = () => {
   return (
-    <RootStack spacing={10}>
+    <RootStack spacing={10} minHeight={'100vh'}>
       <Navbar />
       <PageTransitionStyle>
         <Outlet />

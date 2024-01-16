@@ -13,7 +13,7 @@ color:white;
 }
 
 & i {
-  margin: 2rem 1rem;
+  // margin: 2rem 1rem;
   color:ivory;
 }
 `;
@@ -23,14 +23,16 @@ const Footer = () => {
   return (
     <StyledFooter
       spacing={2}
-      maxHeight={10}
-      // id="footer"
+      id="footer"
       justifyContent={"space-between"}
+      // position={"relative"}
+      // bottom={0}
+      // width={'100%'}
     >
       <Divider orientation="horizontal" variant="fullWidth" color="white"/>
       <Grid container justifyContent={"space-between"}>
         <Grid container xs={6} justifyContent={"center"}>
-          <Grid xs={2} maxHeight={5}>
+          <Grid xs={2}>
             <a
               href="https://www.linkedin.com/in/pdutra145/"
               target="_blank"

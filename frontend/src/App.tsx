@@ -9,6 +9,8 @@ import ResumePage from "./pages/Resume";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import Articles from "./pages/Articles";
+import ArticleForm from "./components/Artigos/ArticleForm";
+import ArticleForms from "./pages/ArticleForms";
 
 const router = createBrowserRouter([
   {
@@ -20,6 +22,7 @@ const router = createBrowserRouter([
       { path: "/certificados", element: <CertficatesPage /> },
       { path: "/resumo", element: <ResumePage /> },
       { path: "/artigos", element: <Articles /> },
+      { path: "/artigos/create", element: <ArticleForms /> },
     ],
   },
 ]);
