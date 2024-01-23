@@ -1,0 +1,17 @@
+Flask
+Flask-SQLAlchemy
+Flask-Script
+Flask-Uploads
+Flask-Login
+Flask-CORS
+python-dotenv
+requests
+werkzeug
+python-dateutil
+waitress
+pymysql
+cryptography
+marshmallow-sqlalchemy
+flask_graphql
+graphene
+graphene_sqlalchemy
