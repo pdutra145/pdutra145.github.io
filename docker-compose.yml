@@ -7,7 +7,7 @@ services:
     image: personal_website_backend
     env_file:
       - ./backend/.env
-    command: flask --app app run --debug
+    # command: flask --app app run --debug
     # command: waitress-serve --listen '0.0.0.0:5000' --call 'app:create_app'
     volumes:
       - ./backend:/app
@@ -19,8 +19,8 @@ services:
     build:
       context: ./frontend
       dockerfile: Dockerfile
-    # image: personal_website_frontend
-    command: start
+    image: personal_website_frontend
+    # command: start
     # command: start:prod
     env_file:
       - ./frontend/.env
@@ -39,9 +39,9 @@ services:
       - MYSQL_DATABASE=personal_website
       - MYSQL_ROOT_PASSWORD=mypass
     volumes: 
-      - personal_website_data:/var/lib/mysql
+      - personal_website_personal_website_data:/var/lib/mysql
 
 volumes:
-  personal_website_data:
+  personal_website_personal_website_data:
     external: true
     

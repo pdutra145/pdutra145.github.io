@@ -15,3 +15,4 @@ marshmallow-sqlalchemy
 flask_graphql
 graphene
 graphene_sqlalchemy
+PyJWT

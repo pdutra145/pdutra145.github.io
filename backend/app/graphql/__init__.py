@@ -1,23 +1,10 @@
 import graphene
-from .models import Certificados, User, Introduction
-from graphene_sqlalchemy import SQLAlchemyObjectType
-
-
-# GraphQL Types
-class UserType(SQLAlchemyObjectType):
-    class Meta:
-        model = User
-
-
-class IntroductionType(SQLAlchemyObjectType):
-    class Meta:
-        model = Introduction
-
-
-class CertificadosType(SQLAlchemyObjectType):
-    class Meta:
-        model = Certificados
-
+import jwt
+from flask import session
+from .types import UserType, IntroductionType, CertificadosType
+from ..models import Introduction, User, Certificados
+from .mutations import CreateIntro, CreateCertificado
+from ..middleware.auth import protected
 
 class Query(graphene.ObjectType):
     users = graphene.List(UserType)
@@ -43,6 +30,7 @@ class Query(graphene.ObjectType):
 
         return query.all()
 
+    @protected
     def resolve_certificates(self, info, **kwargs):
         query = Certificados.query
 
@@ -51,6 +39,10 @@ class Query(graphene.ObjectType):
                 query = query.filter(getattr(Certificados, key) == value)
 
         return query.all()
+    
+class Mutation(graphene.ObjectType):
+    create_intro = CreateIntro.Field()
+    create_certificate = CreateCertificado.Field()
 
 
-schema = graphene.Schema(query=Query)
+schema = graphene.Schema(query=Query, mutation=Mutation)
